@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:login_signin_ui/components/rounded_button.dart';
 import 'package:login_signin_ui/screen/components/background.dart';
 import 'package:login_signin_ui/constants.dart';
+import 'package:login_signin_ui/screen/login/login_screen.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -11,30 +12,43 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'Welcome to Amar Notes',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Welcome to Amar Notes',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          SvgPicture.asset(
-            "assets/icons/chat.svg",
-            height: size.height * 0.45,
-          ),
-          RoundedButton(
-            press: () {},
-            text: 'LOGIN',
-          ),
-          RoundedButton(
-            text: 'REGISTER',
-            color: kPrimaryLightColor,
-            textcolor: Colors.black,
-            press: () {},
-          ),
-        ],
+            SizedBox(height: size.height * 0.05),
+            SvgPicture.asset(
+              "assets/icons/chat.svg",
+              height: size.height * 0.45,
+            ),
+            SizedBox(height: size.height * 0.05),
+            RoundedButton(
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginScreen();
+                    },
+                  ),
+                );
+              },
+              text: 'LOGIN',
+            ),
+            RoundedButton(
+              text: 'REGISTER',
+              color: kPrimaryLightColor,
+              textcolor: Colors.black,
+              press: () {},
+            ),
+          ],
+        ),
       ),
     );
   }
