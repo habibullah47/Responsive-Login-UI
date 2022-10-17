@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:login_signin_ui/components/already_have_an_account_acheck.dart';
 import 'package:login_signin_ui/components/rounded_button.dart';
 import 'package:login_signin_ui/components/rounded_input_field.dart';
+import 'package:login_signin_ui/components/rounded_password_field.dart';
+import 'package:login_signin_ui/components/text_field_container.dart';
 import 'package:login_signin_ui/constants.dart';
 import 'package:login_signin_ui/screen/login/components/background.dart';
 
@@ -29,30 +32,18 @@ class Body extends StatelessWidget {
           SizedBox(height: size.height * 0.03),
           RoundedInputField(
             hintText: 'Your Email',
-            icon: const Icon(Icons.person, color: kPrimaryColor),
             onChanged: (value) {},
-            obscureText: false,
           ),
-          RoundedInputField(
-            hintText: 'Your Password',
-            icon: const Icon(Icons.lock, color: kPrimaryColor),
-            suffixIcon: const Icon(Icons.visibility, color: kPrimaryColor),
-            onChanged: (Value) {},
-            obscureText: true,
+          RoundedPasswordField(
+            onChanged: (String value) {},
           ),
-          RoundedButton(text: 'LOGIN', press: () {}),
+          RoundedButton(
+            text: 'LOGIN',
+            press: () {},
+          ),
           SizedBox(height: size.height * 0.03),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('Don\'t have an Account?'),
-              TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Sign Up',
-                    style: TextStyle(color: kPrimaryColor),
-                  ))
-            ],
+          AlreadyHaveAnAccountCheck(
+            press: () {},
           ),
         ],
       ),

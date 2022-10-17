@@ -15,11 +15,11 @@ class TextFieldContainer extends StatelessWidget {
       width: size.width * 0.8,
       margin: const EdgeInsets.symmetric(vertical: 10),
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-      child: child,
       decoration: BoxDecoration(
         color: kPrimaryLightColor,
         borderRadius: BorderRadius.circular(29),
       ),
+      child: child,
     );
   }
 }
