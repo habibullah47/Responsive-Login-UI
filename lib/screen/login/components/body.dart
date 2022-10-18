@@ -4,9 +4,8 @@ import 'package:login_signin_ui/components/already_have_an_account_acheck.dart';
 import 'package:login_signin_ui/components/rounded_button.dart';
 import 'package:login_signin_ui/components/rounded_input_field.dart';
 import 'package:login_signin_ui/components/rounded_password_field.dart';
-import 'package:login_signin_ui/components/text_field_container.dart';
-import 'package:login_signin_ui/constants.dart';
 import 'package:login_signin_ui/screen/login/components/background.dart';
+import 'package:login_signin_ui/screen/signup/signup_screen.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -43,7 +42,11 @@ class Body extends StatelessWidget {
           ),
           SizedBox(height: size.height * 0.03),
           AlreadyHaveAnAccountCheck(
-            press: () {},
+            press: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const SignupScreen();
+              }));
+            },
           ),
         ],
       ),

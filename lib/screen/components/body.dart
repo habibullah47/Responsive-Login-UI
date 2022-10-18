@@ -4,6 +4,7 @@ import 'package:login_signin_ui/components/rounded_button.dart';
 import 'package:login_signin_ui/screen/components/background.dart';
 import 'package:login_signin_ui/constants.dart';
 import 'package:login_signin_ui/screen/login/login_screen.dart';
+import 'package:login_signin_ui/screen/signup/signup_screen.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -45,7 +46,11 @@ class Body extends StatelessWidget {
               text: 'REGISTER',
               color: kPrimaryLightColor,
               textcolor: Colors.black,
-              press: () {},
+              press: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const SignupScreen();
+                }));
+              },
             ),
           ],
         ),
