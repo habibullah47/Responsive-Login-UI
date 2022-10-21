@@ -18,9 +18,11 @@ class Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Welcome to Amar Notes',
+              'Welcome to Amar-Notes',
               style: TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w900,
+                color: kPrimaryColor,
+                fontSize: 20,
               ),
             ),
             SizedBox(height: size.height * 0.05),
